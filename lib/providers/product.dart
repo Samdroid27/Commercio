@@ -5,14 +5,16 @@ class Product with ChangeNotifier{
   String id;
   String categoryId;
   String description;
-  String price;
+  double price;
+  String imageUrl;
 
   Product({
    @required this.title,
    @required this.id,
    @required this.categoryId,
    @required this.price,
-   @required this.description
+   @required this.description,
+   @required this.imageUrl
   });
 
 }

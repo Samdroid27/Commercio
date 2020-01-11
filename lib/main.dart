@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import './screens/categories_screen.dart';
 import './screens/category_product_screen.dart';
 import './providers/categories.dart';
+import './providers/products.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(
           value: Categories(),
+        ),
+        ChangeNotifierProvider.value(
+          value: Products(),
         )
       ],
           child: MaterialApp(
