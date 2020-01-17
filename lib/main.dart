@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import './screens/categories_screen.dart';
 import './screens/category_product_screen.dart';
+import './screens/product_detail_screen.dart';
 import './providers/categories.dart';
 import './providers/products.dart';
 
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
 
   routes: {
       CategoriesScreen.routeName : (ctx)=> CategoriesScreen(),
-      CategoriesProductScreen.routeName : (ctx)=> CategoriesProductScreen()
+      CategoriesProductScreen.routeName : (ctx)=> CategoriesProductScreen(),
+      ProductDetailScreen.routeName : (ctx)=> ProductDetailScreen()
   },
         
 

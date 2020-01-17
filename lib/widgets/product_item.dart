@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/product.dart';
+import '../screens/product_detail_screen.dart';
 
 
 class ProductItem extends StatelessWidget {
@@ -21,16 +22,24 @@ class ProductItem extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15)
-                  ),
-                child: Image.network(
-                  product.imageUrl,
-                  height: 250,
-                  width: double.infinity,
-                  fit: BoxFit.fill,
+                Hero(
+                  tag: product.id,
+                                  child: GestureDetector(
+                                   onTap: (){
+                                     Navigator.of(context).pushNamed(ProductDetailScreen.routeName,arguments: product);
+                                   }, 
+                                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15)
+                      ),
+                    child: Image.network(
+                      product.imageUrl,
+                      height: 250,
+                      width: double.infinity,
+                      fit: BoxFit.fill,
+                      ),
+                    ),
                   ),
                 ),
                 Positioned(
